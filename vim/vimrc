@@ -1,0 +1,65 @@
+set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
+ 
+set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
+ 
+set expandtab       " Use the appropriate number of spaces to insert a <Tab>.
+                    " Spaces are used in indents with the '>' and '<' commands
+                    " and when 'autoindent' is on. To insert a real tab when
+                    " 'expandtab' is on, use CTRL-V <Tab>.
+ 
+set smarttab        " When on, a <Tab> in front of a line inserts blanks
+                    " according to 'shiftwidth'. 'tabstop' is used in other
+                    " places. A <BS> will delete a 'shiftwidth' worth of space
+                    " at the start of the line.
+
+set number          " Show line numbers.
+
+set showmatch       " When a bracket is inserted, briefly jump to the matching
+                    " one. The jump is only done if the match can be seen on the
+                    " screen. The time to show the match can be set with
+                    " 'matchtime'.
+
+set ignorecase      " Ignore case in search patterns.
+
+set autoindent      " Copy indent from current line when starting a new line
+                    " (typing <CR> in Insert mode or when using the "o" or "O"
+                    " command).
+
+set ruler           " Show the line and column number of the cursor position,
+                    " separated by a comma.
+
+set noswapfile      " Turn backup off                    
+
+set colorcolumn=80  " Highlight the background for text that goes over the 80 column limit
+
+highlight ColorColumn ctermbg=Black 
+
+" Always show the status line
+set laststatus=2
+
+" Define custom highlight groups
+highlight User1 ctermfg=White ctermbg=DarkGray
+highlight User2 ctermfg=White ctermbg=Blue
+highlight User3 ctermfg=White ctermbg=Green 
+highlight User4 ctermfg=White ctermbg=Yellow
+highlight User5 ctermfg=White ctermbg=Cyan
+
+" Format the status line
+set statusline=
+set statusline+=%2*
+set statusline+=\ %n\  " buffer number
+set statusline+=%3*\ %t    " tail of the filename
+set statusline+=%h      " help file flag
+set statusline+=%m      " modified flag
+set statusline+=%r      " read only flag
+set statusline+=\ 
+set statusline+=%1*
+set statusline+=%=      " separation point between left and right aligned items
+set statusline+=%4*
+set statusline+=\ %{&filetype}\   " file type
+set statusline+=%5*
+set statusline+=\ %{strlen(&fenc)?&fenc:'none'}   " file encoding
+set statusline+=\ \(%{&ff}\)\       " file format
+set statusline+=%2*
+set statusline+=\ %l\:%c    " current line/column number
+set statusline+=\ \(%p%%\)\        " percentage through buffer
