@@ -28,4 +28,3 @@ setup() {
 echo_header 'Create directories'
 
 setup
-

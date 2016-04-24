@@ -1,0 +1,20 @@
+# Prompt theme
+PROMPT_THEME='default'
+
+# What modules to load configuration for
+MODULES=(                                                            
+    'environment'
+    'history' 
+    'directories' 
+    'colors' 
+    'utils'
+    'completion' 
+    'prompt'   
+)  
+
+for MODULE in ${MODULES[@]}; do
+    moduleConfig="${ZDOTDIR:-$HOME}/.zsh-config/$MODULE/config.zsh" 
+    if [[ -s "$moduleConfig" ]]; then
+        source "$moduleConfig"
+    fi
+done

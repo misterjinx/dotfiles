@@ -42,3 +42,17 @@ echo_header() {
     echo -e "\n${BLUE_BOLD}# $1${NC}\n"
 }
 
+echo_prompt() {
+    echo_yellow "[?] $1 (y/n)"    
+}
+
+confirm() {
+    read -n 1
+    if [[ $REPLY =~ ^[Yy]$ ]]
+        # no
+        return 0
+    then
+        # yes
+        return 1
+    fi
+}

@@ -1,6 +1,9 @@
 #!/bin/bash
 
-./setup/dirs.sh
+cd "$(dirname "$BASH_SOURCE")"
+
+./setup/directories.sh
 ./setup/symlinks.sh
+./setup/shell.sh
 
 echo -e ""
