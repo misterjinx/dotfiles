@@ -1,0 +1,7 @@
+# Set status format and tell screen how to change xterm's title. 
+# Besides the `screen` prefix, show the screen window number [%n], 
+# hostname [%h] and terminal title [%t]
+hardstatus string "screen [%n] %h - %t"i
+termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen (not title yet)\007'
+windowlist title "Num Name%=Location Flags"
+windowlist string "%03n %t%=%h %f"
