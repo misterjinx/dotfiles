@@ -4,6 +4,7 @@ PROMPT_THEME='default'
 # What modules to load configuration for
 MODULES=(                                                            
     'environment'
+    'terminal'
     'history' 
     'directories' 
     'colors' 
