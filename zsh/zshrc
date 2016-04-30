@@ -19,3 +19,15 @@ for MODULE in ${MODULES[@]}; do
         source "$moduleConfig"
     fi
 done
+
+# What tools to enable 
+TOOLS=(                                                            
+    'python/virtualenvwrapper'
+)
+
+for TOOL in ${TOOLS[@]}; do
+    toolConfig="${ZDOTDIR:-$HOME}/.zsh-config/tools/$TOOL/config.zsh" 
+    if [[ -s "$toolConfig" ]]; then
+        source "$toolConfig"
+    fi
+done
