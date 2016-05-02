@@ -1,5 +1,5 @@
 # Only configure if wrapper script exists
-if (( ! $+commands[virtualenvwrapper.sh )); then
+if (( ! $+commands[virtualenvwrapper.sh] )); then
   return 1
 fi
 
