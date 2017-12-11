@@ -1,9 +1,25 @@
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
+function get_pwd() {
+    local normal_pwd="${PWD/#$HOME/~}"
+    local max_length=35
+    local current_pwd
+
+    if [ ${#normal_pwd} -gt $max_length ]; then 
+        # https://github.com/robbyrussell/oh-my-zsh/issues/5068#issuecomment-218780098
+        # current_pwd=${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~}
+        current_pwd="%(5~|%-1~/.../%3~|%4~)"
+    else
+        current_pwd=${normal_pwd}
+    fi
+    
+    echo "$current_pwd"
+}
+
 # prompt format
 PROMPT='%{$fg_bold[$NCOLOR]%}%n@%m\
-%{$reset_color%}%{$fg_bold[blue]%} %~\
+%{$reset_color%}%{$fg_bold[blue]%} $(get_pwd)\
 $(git_prompt_info)$(git_prompt_status) \
 %{$fg_bold[blue]%}%(!.#.$)%{$reset_color%} '
 RPS1='${return_code}'

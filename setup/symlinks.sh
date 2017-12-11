@@ -5,6 +5,7 @@ cd "$(dirname "$BASH_SOURCE")" && source 'utils.sh'
 declare -a SYMLINKS=(
     'vim/vimrc'
     'screen/screenrc'
+    'tmux/tmux.conf'
 )
 
 setup() {
