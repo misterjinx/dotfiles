@@ -12,10 +12,10 @@ function title {
     if [[ $TERM == "screen" ]]; then
         # Set hardstatus for GNU Screen:
         print -Pn "\ek$1:q\e\\"
-    elif [[ $TERM == "xterm" || $TERM == "rxvt" ]]; then
-        # Use this one instead for XTerms:
-        print -Pn "\e]0;$1\a"
     fi
+
+    # Use this one instead for XTerms:
+    print -Pn "\e]0;$1\a"    
 }
 
 function precmd_hook {

@@ -38,11 +38,10 @@ highlight ColorColumn ctermbg=Black
 set laststatus=2
 
 " Define custom highlight groups
-highlight User1 ctermfg=White ctermbg=DarkGray
-highlight User2 ctermfg=White ctermbg=Blue
-highlight User3 ctermfg=White ctermbg=Green 
-highlight User4 ctermfg=White ctermbg=Yellow
-highlight User5 ctermfg=White ctermbg=Cyan
+highlight User1 ctermfg=247 ctermbg=236
+highlight User2 ctermfg=255 ctermbg=240
+highlight User3 ctermfg=22 ctermbg=148 
+highlight User4 ctermfg=8 ctermbg=250
 
 " Format the status line
 set statusline=
@@ -55,13 +54,14 @@ set statusline+=%r      " read only flag
 set statusline+=\ 
 set statusline+=%1*
 set statusline+=%=      " separation point between left and right aligned items
-set statusline+=%4*
-set statusline+=\ %{&filetype}\   " file type
-set statusline+=%5*
-set statusline+=\ %{strlen(&fenc)?&fenc:'none'}   " file encoding
-set statusline+=\ \(%{&ff}\)\       " file format
+set statusline+=%1*
+set statusline+=\ %{&filetype}\ \|   " file type
+set statusline+=%1*
+set statusline+=\ %{strlen(&fenc)?&fenc:'none'}\ \|   " file encoding
+set statusline+=\ \(%{&ff}\)\ \       " file format
 set statusline+=%2*
-set statusline+=\ %l\:%c    " current line/column number
+set statusline+=\ %l\:%c\     " current line/column number
+set statusline+=%4*
 set statusline+=\ \(%p%%\)\        " percentage through buffer
 
 " Set title string and push it to xterm/screen window title
@@ -72,7 +72,7 @@ if &term == "screen"
     set t_ts=^[k
     set t_fs=^[\
 endif
-if &term == "screen" || &term == "xterm"
+if &term == "screen" || &term == "xterm" || &term == "xterm-256color"
     if has('title')
         set title
     endif
