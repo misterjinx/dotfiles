@@ -1,3 +1,7 @@
+syntax enable       " enable syntax processing
+
+filetype indent on  " load filetype-specific indent files
+
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
  
 set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
@@ -46,14 +50,14 @@ highlight User4 ctermfg=8 ctermbg=250
 " Format the status line
 set statusline=
 set statusline+=%2*
-set statusline+=\ %n\  " buffer number
-set statusline+=%3*\ %t    " tail of the filename
-set statusline+=%h      " help file flag
-set statusline+=%m      " modified flag
-set statusline+=%r      " read only flag
-set statusline+=\ 
+set statusline+=\ %n\       " buffer number
+set statusline+=%3*\ %t\    " tail of the filename
+set statusline+=%h          " help file flag
+set statusline+=%m          " modified flag
+set statusline+=%r          " read only flag
+set statusline+=\  
 set statusline+=%1*
-set statusline+=%=      " separation point between left and right aligned items
+set statusline+=%=          " separation point between left and right aligned items
 set statusline+=%1*
 set statusline+=\ %{&filetype}\ \|   " file type
 set statusline+=%1*
