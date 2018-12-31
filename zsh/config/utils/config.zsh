@@ -14,3 +14,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# General aliases
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'" # rot13 encoding
+
