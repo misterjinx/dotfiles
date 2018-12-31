@@ -36,6 +36,8 @@ set noswapfile      " Turn backup off
 
 set colorcolumn=80  " Highlight the background for text that goes over the 80 column limit
 
+set mouse=a         " Allow scrolling inside vim when using tmux (or other xterm)
+
 highlight ColorColumn ctermbg=Black 
 
 " Always show the status line
